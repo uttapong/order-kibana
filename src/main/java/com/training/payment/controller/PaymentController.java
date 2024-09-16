@@ -3,10 +3,10 @@ package com.training.payment.controller;
 import com.training.payment.model.PaymentRequest;
 import com.training.payment.model.PaymentResponse;
 import com.training.payment.service.PaymentService;
+import com.training.payment.constants.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/api")
@@ -21,7 +21,7 @@ public class PaymentController {
 
     @PostMapping("/submit")
     public ResponseEntity<PaymentResponse> submitPayment(@RequestBody PaymentRequest paymentRequest,
-            @RequestHeader(value = "Correlation-Id", required = false) String correlationId) {
+            @RequestHeader(value = Constants.CORRELATION_ID, required = false) String correlationId) {
 
         log.info("Received payment request: {}", paymentRequest);
 
