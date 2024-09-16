@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/api")
 @Slf4j
 public class PaymentController {
 
